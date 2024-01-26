@@ -6,7 +6,6 @@ const addPlaceController = async (req,res)=>{
 
         await Listings.create({title,description,image,price,location,country})
         .then(result=>{
-            console.log(result);
             res.redirect("/");
         }
         );
