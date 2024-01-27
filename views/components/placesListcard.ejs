@@ -1,0 +1,27 @@
+
+<% result.forEach((res)=>{%>
+    <div class="destination-info-card-wrapper">
+
+        <div class="card">
+            <img src=<%=res.image %> alt=<%= res.title %> width="300px" height="250px">
+
+                <div class="card__details">
+
+                    <div class="title">
+                        <a href="/show/<%= res.id %>"> <p><%= res.title %></p> </a>
+                    </div>
+                    <p>&#x20B9; <%= res.price.toLocaleString("en-IN")  %></p>
+                    <p>
+                        <%= res.description %>
+                    </p>
+                    
+
+                    <a href="/show/<%= res.id %>"><button class="read-more">Read more</button></a>
+                    <a href="/<%= res.id %>/edit"><button class="read-more">Edit</button></a>
+                    <button type="button" class="deletePlace-btn" >Delete</button>
+                    <form action="/<%=res.id %>/delete?_method=DELETE" method="post"> </form>
+              
+                </div>
+        </div>
+    </div>
+<% }) %>

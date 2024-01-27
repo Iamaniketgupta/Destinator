@@ -5,7 +5,7 @@ const body = document.querySelector("body");
 const nav = document.querySelector("#nav-wrapper");
 const navIconBars = document.querySelector(".fa-bars");
 const navIconCross = document.querySelector("#cross");
-body.classList.add("dark-theme"); // default theme
+body.classList.add("light-theme"); // default theme
 
 //  THEME
 
@@ -32,4 +32,17 @@ navIconBars.addEventListener("click", () => {
 
 navIconCross.addEventListener("click", () => {
     nav.classList.toggle("shownav")
+});
+
+
+const deleteButtons = document.querySelectorAll(".deletePlace-btn");
+
+deleteButtons.forEach(button => {
+    button.addEventListener("click", function() {
+        const confirmation = confirm("Are you sure to delete this?");
+        if (confirmation) {
+            const form = this.nextElementSibling; 
+            form.submit(); 
+        }
+    });
 });
