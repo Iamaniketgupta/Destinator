@@ -2,7 +2,8 @@ const express  = require("express");
 const app  = express();
 const path  = require("path");
 const ejs  = require("ejs");
-const addplaceRouter = require("./routers/addplaceRouter");
+const methodOverride = require("method-override");
+const indexRouter = require("./routers/crudRoutes");
 require("dotenv").config();
 const PORT = process.env.PORT || 8000;
 require("./config/database")(); // DataBase
@@ -12,24 +13,14 @@ require("./config/database")(); // DataBase
 app.set("view engine",ejs);
 app.set("views",path.resolve("./views"));
 
-// setting up Middleware
+// Middlewares
 
 app.use("/public",express.static(path.join(__dirname,"public")));
 app.use(express.urlencoded({extended:true}));
+app.use(methodOverride("_method"));
 
-// Routes Middlewares
+// Routes
+app.use("/", indexRouter);
 
-
-app.use("/addplace", addplaceRouter
-  );
-
-
-
-app.get("/",(req,res)=>
-{
-    res.render("index.ejs");
-});
-
-
-
+// Server
 app.listen(PORT);
