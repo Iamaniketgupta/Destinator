@@ -11,7 +11,8 @@ const listingSchema = new Schema({
     },
     image: {
         type: String,
-        default: "../public/Assets/listingnoimage.png",
+        required: true,
+        default: "https://static.vecteezy.com/system/resources/previews/008/015/799/original/illustration-of-no-image-available-icon-template-for-no-image-or-picture-coming-soon-free-vector.jpg",
     },
 
     price: {
