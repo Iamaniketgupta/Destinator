@@ -13,6 +13,8 @@
     <li><%= details.location  %></li>
     <li><%= details.country  %></li>
 
-
+    <a href="/<%= details.id %>/edit"><button class="btn">Edit</button></a>
+    <button type="button" class="deletePlace-btn btn" >Delete</button>
+    <form action="/<%=details.id %>/delete?_method=DELETE" method="post"> </form>
 </body>
 </html>

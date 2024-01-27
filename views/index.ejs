@@ -4,20 +4,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Find My Home</title>
+    <title>Destinator</title>
     <%- include('./partials/styleSheets') %>
 </head>
 
 <body>
     <%- include('./components/navbar') %>
-        <div class="main-wrapper">
-            <div class="hero-section-wrapper">
-                <br><br><br>
-                <h1>WELCOME TO THE DESTINATOR</h1>
-                <br><br><br>
-            </div>
-            <%- include('./components/placesListcard') %>
+       
+                <section class="hero flex">
+                    <div class="hero-inner">
+                        <h1>Explore The <span style="color: #74c79d;">World</span></h1>
+                        <p>Destinator Offers a Collection of Best Travelling Places in the World</p>
+                        <a href="#places" class=" hero-btn btn">Explore...</a>
+                    </div>
+                </section>
+         
 
+
+            <main class="card-wrapper flex" id="places">
+                <%- include('./components/placesListcard') %>
+            </main>
+        
 
 
 
