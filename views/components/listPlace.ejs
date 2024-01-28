@@ -1,13 +1,42 @@
-<div class="place-post-wrapper">
-    <form action="/addplace/new" method="post">
-        <input type="url" name="image" id="">
-        <input type="text" name="title" id="" placeholder="title">
-        <input type="text" name="description" id="" placeholder="describe">
-        price
-        <input type="number" name="price" id="">
-        <input type="text" name="location" id="" placeholder="location">
-        <input type="text" name="country" id="" placeholder="country">
+<!DOCTYPE html>
+<html lang="en">
 
-<input type="submit" name="" id="" value="Submit">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Destinator</title>
+    <%- include('.././partials/styleSheets') %>
+</head>
+
+<body>
+    <%- include('navbar') %>
+   
+
+        <h1 class="form-heading">ADD DESTINATION</h1>
+    
+    <div class="place-post-wrapper flex" >
+    <form action="/addplace/new" method="post" class="flex flex-col" >
+        <p>Image URL/LINK</p>
+        <input type="url" name="image" id="" placeholder="URL/LINK">
+        <p>Title</p>
+        <input type="text" name="title" id="" placeholder="title" required>
+        <p>Description</p>
+        <textarea type="text" name="description" id="" placeholder="describe here..." required></textarea>
+       <p>Price</p>
+        <input type="number" name="price" id="" placeholder="Price">
+        <p>Location</p>
+        <input type="text" name="location" id="" placeholder="location" required>
+        <p>Country</p>
+        <input type="text" name="country" id="" placeholder="country" required>
+<div class="form-btn">
+<button type="submit" class="btn">Submit</button>
+    <button type="reset" class="btn">Reset</button>
+</div>
     </form>
 </div>
+<%- include('footer') %>
+
+<%- include('.././partials/scripts') %>
+</body>
+
+</html>

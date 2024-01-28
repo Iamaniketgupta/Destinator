@@ -1,13 +1,32 @@
-<div class="place-post-wrapper">
-    <form action="/<%=values.id %>/edit?_method=PUT" method="post">
-        <input type="url" name="image" id="" value=<%=values.image%>>
-        <input type="text" name="title" id="" placeholder="title" value="<%=values.title%>">
-        <input type="text" name="description" id="" placeholder="describe" value="<%=values.description%>">
-        price
-        <input type="number" name="price" id="" value="<%=values.price%>">
-        <input type="text" name="location" id="" placeholder="location" value="<%=values.location%>">
-        <input type="text" name="country" id="" placeholder="country" value= "<%=values.country%>">
+<!DOCTYPE html>
+<html lang="en">
 
-<button type="submit">Save</button>  
-  </form>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Destinator</title>
+    <%- include('.././partials/styleSheets') %>
+</head>
+
+<body>
+    <%- include('navbar') %>
+    <h1 class="form-heading">EDIT PLACE</h1>
+    <div class="place-post-wrapper">
+        <form action="/<%=values.id %>/edit?_method=PUT" method="post" class="flex flex-col">
+            <p>Image URL: </p><input type="url" name="image" id="" value=<%=values.image%>>
+            <p>Title: </p><input type="text" name="title" id="" placeholder="title" value="<%=values.title%>">
+            <p>Description: </p><input type="text" name="description" id="" placeholder="describe" value="<%=values.description%>">
+            <p>Price: </p><input type="number" name="price" id="" value="<%=values.price%>">
+            <p>Location: </p><input type="text" name="location" id="" placeholder="location" value="<%=values.location%>">
+            <p>Country: </p><input type="text" name="country" id="" placeholder="country" value= "<%=values.country%>">
+            <div class="form-btn">
+            <button type="submit" class="btn">Save</button>  
+        </div>
+        </form>
+    </div>
 </div>
+<%- include('footer') %>
+<%- include('.././partials/scripts') %>
+</body>
+
+</html>

@@ -1,20 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Destinator</title>
+    <%- include('.././partials/styleSheets') %>
 </head>
+
 <body>
-    <h1><%= details.title  %></h1>
 
-    <li><%= details.description  %></li>
-    <li>&#x20B9;<%= details.price.toLocaleString("en-IN")  %></li>
-    <li><%= details.location  %></li>
-    <li><%= details.country  %></li>
+    <%- include('navbar') %>
+        <div class="main-wrapper">
+            <h1 class="head-title"><%= details.title  %></h1> 
+           
+<div class="details-wrapper">
+    <div class="des-img flex">
+        <img src="<%= details.image %>" alt="<%= details.title  %>"> 
+    </div>
+    <div class="content">
+        <h2><%= details.title  %></h2>
+        <hr>
+        <h3 class="text">Price : &#x20B9;<%= details.price.toLocaleString("en-IN")  %></h3>
+        
+        <div class="description-box">
+            <h2>About</h2>
+            <%= details.description  %>
+        </div>
+        <hr>
+        <div class="place-address">
+            <p class="text"><span style="color: teal;"><i class="fa-solid fa-location-crosshairs"></i></span> Location : <%= details.location  %></p>
+            <p class="text"> <span style="color: teal;"><i class="fa-solid fa-earth-americas"></i></span>  Country  : <%= details.country  %></p>
+        </div>
+        <hr>
+        <div  class="action-btn">
+            <a href="/<%= details.id %>/edit"><i class="fa-solid fa-pen-to-square"></i></a>
+            <span class="deletePlace-btn" ><i class="fa-solid fa-trash"></i></span>
+        </div>
 
-    <a href="/<%= details.id %>/edit"><button class="btn">Edit</button></a>
-    <button type="button" class="deletePlace-btn btn" >Delete</button>
-    <form action="/<%=details.id %>/delete?_method=DELETE" method="post"> </form>
+</div>
+
+    <form action="/<%=details.id %>/delete?_method=DELETE" method="post" style="display:none"> </form>
+</div>
+<%- include('footer') %>
+</div>
+        <%- include('.././partials/scripts') %>
 </body>
+
 </html>
+

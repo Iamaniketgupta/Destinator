@@ -10,26 +10,22 @@
 
 <body>
     <%- include('./components/navbar') %>
-       
-                <section class="hero flex">
-                    <div class="hero-inner">
-                        <h1>Explore The <span style="color: #74c79d;">World</span></h1>
-                        <p>Destinator Offers a Collection of Best Travelling Places in the World</p>
-                        <a href="#places" class=" hero-btn btn">Explore...</a>
-                    </div>
-                </section>
-         
-
+        <div class="main-wrapper">
+            <section class="hero flex">
+                <div class="hero-inner">
+                    <h1>Explore The <span style="color: #74c79d;">World</span></h1>
+                    <p>Destinator Offers a Collection of Best Travelling Places in the World</p>
+                    <a href="#places" class=" hero-btn btn">Explore...</a>
+                </div>
+            </section>
 
             <main class="card-wrapper flex" id="places">
                 <%- include('./components/placesListcard') %>
             </main>
-        
 
-
-
+            <%- include('./components/footer') %>
         </div>
-        <%- include('./partials/scripts') %>
+            <%- include('./partials/scripts') %>
 </body>
 
 </html>
