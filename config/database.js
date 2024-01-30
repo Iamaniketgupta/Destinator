@@ -3,7 +3,7 @@ const DB_URL = process.env.DB_URL;
 
 const dbConnect = async () => {
     try {
-        await mongoose.connect(DB_URL, {
+        await mongoose.connect(`${DB_URL}`, {
             dbName: 'destinator_dev'
         });
         console.log("Connected to MongoDB Atlas!");
