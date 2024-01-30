@@ -17,7 +17,7 @@ deleteButtons.forEach(button => {
     button.addEventListener("click", function() {
         const confirmation = confirm("Are you sure to delete this?");
         if (confirmation) {
-            const form = this.nextElementSibling; 
+            const form = document.getElementById("delform"); 
             form.submit(); 
         }
     });
